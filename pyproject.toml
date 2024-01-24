@@ -4,11 +4,14 @@ version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-packages = [{include = "course_work_3_repo"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+python-dateutil = "^2.8.2"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest-cover = "^3.0.0"
 
 [build-system]
 requires = ["poetry-core"]
