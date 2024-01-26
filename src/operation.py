@@ -2,8 +2,8 @@ from datetime import date
 
 
 class Operation:
-    def __init__(self, id, _date, description, send_from, send_to, amount, name):
-        self.id = id
+    def __init__(self, _id, _date, description, send_from, send_to, amount, name):
+        self.id = _id
         self.date = _date
         self.description = description
         self.send_from = send_from
@@ -12,9 +12,9 @@ class Operation:
         self.name = name
 
     def __repr__(self):
-        return (f"Operation(id={id}, _date={self.date}, description={self.description},\n"
+        return (f"Operation(_id={self.id}, _date={self.date}, description={self.description},\n"
                 f"send_from={self.send_from}, send_to={self.send_to},\n"
-                f"amount={self.amount}, name={self.name})")
+                f"amount={self.amount}, name={self.name})\n")
 
     def __str__(self):
         return (f"{self.date} {self.description}\n"
