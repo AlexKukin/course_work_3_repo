@@ -18,14 +18,13 @@ def get_depersonalized_operations(operations_cnt=5):
     user_operations = []
     # операция в БД может быть и меньше, оставляем не более operations_cnt шт.
     for dict_operation in filter_user_operations[:operations_cnt]:
-        if 'from' not in dict_operation:
-            dict_operation['from'] = ""
 
         user_operations.append(
-            Operation(dict_operation.get('id', ""), dict_operation.get('date', ""),
-                      dict_operation.get('description', ""), dict_operation.get('from', ""),
-                      dict_operation.get('to', ""), dict_operation['operationAmount'].get('amount', ""),
-                      dict_operation['operationAmount']['currency'].get('name', "")))
+            Operation(dict_operation['id'], dict_operation['date'],
+                      dict_operation['description'], dict_operation.get('from', ''),
+                      dict_operation['to'], dict_operation['operationAmount']['amount'],
+                      dict_operation['operationAmount']['currency']['name']))
+
 
     # Убираем персональные данные пользователей
     for operation in user_operations:
