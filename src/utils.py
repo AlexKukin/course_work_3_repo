@@ -25,6 +25,7 @@ def get_depersonalized_operations(operations_cnt=5):
                       dict_operation['to'], dict_operation['operationAmount']['amount'],
                       dict_operation['operationAmount']['currency']['name']))
 
+
     # Убираем персональные данные пользователей
     for operation in user_operations:
         operation.depersonalize()
